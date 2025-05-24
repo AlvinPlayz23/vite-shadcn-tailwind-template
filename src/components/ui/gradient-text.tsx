@@ -1,10 +1,9 @@
 import React from "react";
-import { motion, MotionProps } from "motion/react";
+import { motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
 
-interface GradientTextProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> {
+interface GradientTextProps extends React.HTMLAttributes<HTMLElement> {
   className?: string;
   children: React.ReactNode;
   as?: React.ElementType;
@@ -36,6 +35,5 @@ function GradientText({
     </MotionComponent>
   );
 }
-
 
 export { GradientText }

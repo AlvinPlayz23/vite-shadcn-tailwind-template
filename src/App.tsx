@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { HeroSection } from "@/components/ui/shape-landing-hero"
+import { HeroGeometric } from "@/components/ui/shape-landing-hero"
 import { SpotlightCard } from "@/components/ui/spotlight-card"
 import { TextShimmer } from "@/components/ui/text-shimmer"
 import { SparklesText } from "@/components/ui/sparkles-text"
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
-      <HeroSection />
+      <HeroGeometric />
 
       {/* Components Showcase */}
       <div className="container mx-auto px-4 py-20 space-y-32">

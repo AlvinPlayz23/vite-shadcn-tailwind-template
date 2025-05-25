@@ -62,7 +62,14 @@
     "shiki": "^3.4.2",
     "sonner": "^2.0.3",
     "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.7",
+    "@aceternity/container-scroll-animation": "^1.0.0",
+    "@designali/hero": "^1.0.0",
+    "@designali/text-particle": "^1.0.0",
+    "@haydenbleasel/announcement": "^1.0.0",
+    "@shugar/award-badge": "^1.0.0",
+    "@supabase/badge": "^1.0.0",
+    "@youcefbnm/hero-gallery": "^1.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

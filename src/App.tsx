@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { HeroGeometric } from "@/components/ui/shape-landing-hero"
@@ -19,7 +16,7 @@ import { Feature73 } from "@/components/ui/feature-73"
 import { Faq5 } from "@/components/ui/faq-5"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [showChat, setShowChat] = useState(false)
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -114,23 +111,8 @@ function App() {
         <div className="relative h-[400px]">
           <Meteors number={20} />
         </div>
-    <>
-      <div className="flex flex-col items-center justify-center min-h-svh">
-        <Button>Click me</Button>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 

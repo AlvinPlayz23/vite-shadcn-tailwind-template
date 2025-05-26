@@ -14,14 +14,71 @@ import { SignIn1 } from "@/components/ui/modern-stunning-sign-in"
 import { Contact7 } from "@/components/ui/contact-7"
 import { Feature73 } from "@/components/ui/feature-73"
 import { Faq5 } from "@/components/ui/faq-5"
+import { CustomersSection } from "@/components/ui/customers-section"
+import { Feature1 } from "@/components/ui/feature-1"
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
 
 function App() {
   const [showChat, setShowChat] = useState(false)
+
+  const testimonials = [
+    {
+      quote: "This product has transformed how we work. The features are thoughtfully designed and the customer support is exceptional.",
+      name: "Sarah Johnson",
+      designation: "CEO at TechCorp",
+      src: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      quote: "The best solution we've found for our needs. It's intuitive, powerful, and constantly improving.",
+      name: "Mark Anderson",
+      designation: "CTO at Innovate Inc",
+      src: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    }
+  ]
+
+  const customerLogos = [
+    {
+      src: "https://html.tailus.io/blocks/customers/nvidia.svg",
+      alt: "Nvidia Logo",
+      height: 20
+    },
+    {
+      src: "https://html.tailus.io/blocks/customers/github.svg", 
+      alt: "GitHub Logo",
+      height: 16
+    },
+    {
+      src: "https://html.tailus.io/blocks/customers/laravel.svg",
+      alt: "Laravel Logo", 
+      height: 16
+    },
+    {
+      src: "https://html.tailus.io/blocks/customers/openai.svg",
+      alt: "OpenAI Logo",
+      height: 24
+    }
+  ]
 
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <HeroGeometric />
+
+      {/* Feature Section */}
+      <Feature1 
+        title="Modern Web Development"
+        description="Build beautiful, responsive websites with our cutting-edge components and tools."
+        imageSrc="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        imageAlt="Modern development"
+        buttonPrimary={{
+          label: "Get Started",
+          href: "#"
+        }}
+        buttonSecondary={{
+          label: "Learn More",
+          href: "#"
+        }}
+      />
 
       {/* Components Showcase */}
       <div className="container mx-auto px-4 py-20 space-y-32">
@@ -89,6 +146,15 @@ function App() {
             {showChat && <VercelV0Chat />}
           </div>
         </section>
+
+        {/* Testimonials */}
+        <section>
+          <h2 className="text-3xl font-bold mb-8 text-center">What Our Customers Say</h2>
+          <AnimatedTestimonials testimonials={testimonials} />
+        </section>
+
+        {/* Customers */}
+        <CustomersSection customers={customerLogos} />
 
         {/* Authentication */}
         <section className="space-y-8">

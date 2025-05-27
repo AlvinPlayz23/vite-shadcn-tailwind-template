@@ -17,6 +17,14 @@ import { Faq5 } from "@/components/ui/faq-5"
 import { CustomersSection } from "@/components/ui/customers-section"
 import { Feature1 } from "@/components/ui/feature-1"
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials"
+import { TextParticle } from "@/components/ui/text-particle"
+import { ContainerScroll } from "@/components/ui/container-scroll-animation"
+import { Cursor } from "@/components/ui/cursor"
+import { AnimatedDock } from "@/components/ui/animated-dock"
+import { Dock, DockIcon } from "@/components/ui/dock"
+import { AwardBadge } from "@/components/ui/award-badge"
+import { Announcement, AnnouncementTag, AnnouncementTitle } from "@/components/ui/announcement"
+import { Home, Settings, Mail, Phone } from 'lucide-react'
 
 function App() {
   const [showChat, setShowChat] = useState(false)
@@ -59,30 +67,39 @@ function App() {
     }
   ]
 
+  const dockItems = [
+    { link: "#", Icon: <Home className="w-6 h-6" /> },
+    { link: "#", Icon: <Settings className="w-6 h-6" /> },
+    { link: "#", Icon: <Mail className="w-6 h-6" /> },
+    { link: "#", Icon: <Phone className="w-6 h-6" /> },
+  ]
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* Hero Section */}
+      <Announcement>
+        <AnnouncementTag>New</AnnouncementTag>
+        <AnnouncementTitle>Exciting features just launched!</AnnouncementTitle>
+      </Announcement>
+
       <HeroGeometric />
 
-      {/* Feature Section */}
-      <Feature1 
-        title="Modern Web Development"
-        description="Build beautiful, responsive websites with our cutting-edge components and tools."
-        imageSrc="https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-        imageAlt="Modern development"
-        buttonPrimary={{
-          label: "Get Started",
-          href: "#"
-        }}
-        buttonSecondary={{
-          label: "Learn More",
-          href: "#"
-        }}
-      />
+      <ContainerScroll
+        titleComponent={
+          <h1 className="text-4xl font-bold text-center mb-10">
+            Scroll Animation Demo
+          </h1>
+        }
+      >
+        <div className="h-[40rem] w-full rounded-md bg-neutral-900 relative flex items-center justify-center">
+          <TextParticle text="Particle Text" fontSize={60} particleColor="#ffffff" />
+        </div>
+      </ContainerScroll>
 
-      {/* Components Showcase */}
+      <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
+        <AnimatedDock items={dockItems} />
+      </div>
+
       <div className="container mx-auto px-4 py-20 space-y-32">
-        {/* Text Effects */}
         <section className="space-y-8">
           <h2 className="text-3xl font-bold mb-8">Text Effects</h2>
           <div className="space-y-4">
@@ -94,7 +111,6 @@ function App() {
           </div>
         </section>
 
-        {/* Cards */}
         <section className="space-y-8">
           <h2 className="text-3xl font-bold mb-8">Cards</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -120,7 +136,6 @@ function App() {
           </div>
         </section>
 
-        {/* Buttons */}
         <section className="space-y-8">
           <h2 className="text-3xl font-bold mb-8">Buttons</h2>
           <div className="flex flex-wrap gap-4">
@@ -132,7 +147,14 @@ function App() {
           </div>
         </section>
 
-        {/* Interactive Components */}
+        <section className="space-y-8">
+          <h2 className="text-3xl font-bold mb-8">Awards & Recognition</h2>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <AwardBadge type="golden-kitty" place={1} />
+            <AwardBadge type="product-of-the-day" />
+          </div>
+        </section>
+
         <section className="space-y-8">
           <h2 className="text-3xl font-bold mb-8">Interactive Components</h2>
           <div className="space-y-4">
@@ -147,16 +169,13 @@ function App() {
           </div>
         </section>
 
-        {/* Testimonials */}
         <section>
           <h2 className="text-3xl font-bold mb-8 text-center">What Our Customers Say</h2>
           <AnimatedTestimonials testimonials={testimonials} />
         </section>
 
-        {/* Customers */}
         <CustomersSection customers={customerLogos} />
 
-        {/* Authentication */}
         <section className="space-y-8">
           <h2 className="text-3xl font-bold mb-8">Authentication</h2>
           <div className="max-w-md mx-auto">
@@ -164,20 +183,20 @@ function App() {
           </div>
         </section>
 
-        {/* Contact */}
         <Contact7 />
 
-        {/* Features */}
         <Feature73 />
 
-        {/* FAQ */}
         <Faq5 />
 
-        {/* Meteors Effect */}
         <div className="relative h-[400px]">
           <Meteors number={20} />
         </div>
       </div>
+
+      <Cursor>
+        <div className="h-4 w-4 rounded-full bg-primary" />
+      </Cursor>
     </div>
   )
 }
